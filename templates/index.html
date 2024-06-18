@@ -1,0 +1,91 @@
+<!--index.html-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Image to Text PDF Converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f8ff;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background-color: #5bc0de; /* Lighter blue */
+            border-color: #46b8da; /* Lighter blue border */
+        }
+        .btn-primary:hover {
+            background-color: #31b0d5; /* Slightly darker blue on hover */
+            border-color: #269abc; /* Slightly darker blue border on hover */
+        }
+        .file-input-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .file-input-container input[type="file"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .file-input-label {
+            display: inline-block;
+            width: 100%;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .file-input-label:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Image2TextPDF</a>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">Convert JPEG Image to Text and Download as PDF</h1>
+                        <p class="card-text text-center">Upload a JPEG image, and we'll convert the text in the image to a PDF file for you.</p>
+                        <form action="/upload" method="post" enctype="multipart/form-data" class="text-center">
+                            <div class="form-group">
+                                <div class="file-input-container">
+                                    <label for="fileInput" class="file-input-label">Choose file</label>
+                                    <input type="file" id="fileInput" name="file" accept=".jpg, .jpeg">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Convert</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('#fileInput').addEventListener('change', function() {
+            var fileName = this.files[0].name;
+            document.querySelector('.file-input-label').textContent = fileName;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!--thankyou.html-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f8ff;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Image2TextPDF</a>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h1 class="card-title">Thank You!</h1>
+                        <p class="card-text">Your PDF has been created. You can download it by clicking the button below.</p>
+                        <a href="{{ url_for('download_file', pdf_path=pdf_path) }}" class="btn btn-primary">Download PDF</a>
+                        <br><br>
+                        <a href="{{ url_for('index') }}" class="btn btn-secondary">Convert Another File</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
