@@ -75,4 +75,6 @@ jobs:
         with:
           app-name: 'img2txt2'
           slot-name: 'Production'
+          package: '.'
+          startup-command: 'gunicorn --bind 0.0.0.0:8000 wsgi:app'
           
