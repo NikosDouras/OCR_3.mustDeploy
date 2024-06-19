@@ -3,8 +3,8 @@ import os, requests
 from PIL import Image
 from fpdf import FPDF
 
-endpoint = os.getenv('AZURE_ENDPOINT')
-subscription_key = os.getenv('AZURE_KEY')
+endpoint = "https://nameocr1.cognitiveservices.azure.com/"
+subscription_key = "17265e11e5ec4f4695c4f2fafa42182e"
 version = "vision/v3.1/ocr"
 def optimize_image(input_path, output_path, max_size_mb=4, quality=95, min_dim=50, max_dim=4200):
     with Image.open(input_path) as img:
