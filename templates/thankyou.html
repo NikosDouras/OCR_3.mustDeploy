@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Thank You</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
@@ -11,7 +12,7 @@
         .navbar-custom {
             background-color: #007bff;
         }
-        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-brand, 
         .navbar-custom .nav-link {
             color: #fff !important;
         }
@@ -30,19 +31,19 @@
 
         /* Additional Android-specific adjustments */
         @media (max-width: 768px) { /* Target smaller screens like most Android phones */
-      .card-body {
-        padding: 15px; /* Reduce padding for tighter layout */
-          }
-          .card-title {
-            font-size: 1.2rem; /* Slightly smaller heading */
-          }
-          .file-input-label {
-            font-size: 0.9rem; /* Smaller button text */
-            padding: 8px 12px; /* Smaller button padding */
-          }
-          .btn-primary {
-            padding: 8px 12px; /* Smaller button padding */
-          }
+            .card-body {
+                padding: 15px; /* Reduce padding for tighter layout */
+            }
+            .card-title {
+                font-size: 1.5rem; /* Slightly smaller heading */
+            }
+            .card-text {
+                font-size: 1rem; /* Adjust text size */
+            }
+            .btn {
+                padding: 10px 20px; /* Adjust button padding */
+                width: 100%; /* Make buttons full-width */
+            }
         }
     </style>
 </head>
@@ -65,5 +66,8 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
