@@ -1,91 +1,88 @@
-<!--index.html-->
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Image to Text PDF Converter</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f0f8ff;
-        }
-        .navbar {
-            background-color: #007bff;
-        }
-        .navbar-brand, .nav-link {
-            color: #fff !important;
-        }
-        .card {
-            border: none;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .btn-primary {
-            background-color: #5bc0de; /* Lighter blue */
-            border-color: #46b8da; /* Lighter blue border */
-        }
-        .btn-primary:hover {
-            background-color: #31b0d5; /* Slightly darker blue on hover */
-            border-color: #269abc; /* Slightly darker blue border on hover */
-        }
-        .file-input-container {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-        .file-input-container input[type="file"] {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
-        .file-input-label {
-            display: inline-block;
-            width: 100%;
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .file-input-label:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Image to Text PDF Converter</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Additional Android-specific adjustments */
+    @media (max-width: 768px) { /* Target smaller screens like most Android phones */
+      .card-body {
+        padding: 15px; /* Reduce padding for tighter layout */
+      }
+      .card-title {
+        font-size: 1.2rem; /* Slightly smaller heading */
+      }
+      .file-input-label {
+        font-size: 0.9rem; /* Smaller button text */
+        padding: 8px 12px; /* Smaller button padding */
+      }
+      .btn-primary {
+        padding: 8px 12px; /* Smaller button padding */
+      }
+    }
+
+    .file-input-label {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #fileInput {
+      display: none;
+    }
+
+    .btn-primary {
+      width: 100%;
+    }
+
+    .navbar-custom {
+      background-color: #007bff;
+    }
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .navbar-toggler-icon {
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">Image2TextPDF</a>
-    </nav>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title text-center">Convert JPEG Image to Text and Download as PDF</h1>
-                        <p class="card-text text-center">Upload a JPEG image, and we'll convert the text in the image to a PDF file for you.</p>
-                        <form action="/upload" method="post" enctype="multipart/form-data" class="text-center">
-                            <div class="form-group">
-                                <div class="file-input-container">
-                                    <label for="fileInput" class="file-input-label">Choose file</label>
-                                    <input type="file" id="fileInput" name="file" accept=".jpg, .jpeg">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Convert</button>
-                        </form>
-                    </div>
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#">Image2TextPDF</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav"></div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title text-center">Convert Image to PDF</h1>
+            <p class="card-text text-center">Upload an image, we'll convert the text in the image to a PDF file for you.</p>
+            <form action="/upload" method="post" enctype="multipart/form-data" class="text-center">
+              <div class="form-group">
+                <div class="file-input-container">
+                  <label for="fileInput" class="file-input-label">Choose file</label>
+                  <input type="file" id="fileInput" name="file" accept=".jpg, .jpeg">
                 </div>
-            </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Convert</button>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-    <script>
-        document.querySelector('#fileInput').addEventListener('change', function() {
-            var fileName = this.files[0].name;
-            document.querySelector('.file-input-label').textContent = fileName;
-        });
-    </script>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
