@@ -11,13 +11,13 @@
         .navbar-custom {
             background-color: #007bff;
         }
-        .navbar-custom .navbar-brand, 
+        .navbar-custom .navbar-brand,
         .navbar-custom .nav-link {
             color: #fff !important;
         }
         .card {
             border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .btn-primary {
             background-color: #007bff;
@@ -26,6 +26,23 @@
         .btn-primary:hover {
             background-color: #0056b3;
             border-color: #0056b3;
+        }
+
+        /* Additional Android-specific adjustments */
+        @media (max-width: 768px) { /* Target smaller screens like most Android phones */
+            .card-body {
+                padding: 15px; /* Reduce padding for tighter layout */
+            }
+            .card-title {
+                font-size: 1.5rem; /* Slightly smaller heading */
+            }
+            .card-text {
+                font-size: 1rem; /* Adjust text size */
+            }
+            .btn {
+                padding: 10px 20px; /* Adjust button padding */
+                width: 100%; /* Make buttons full-width */
+            }
         }
     </style>
 </head>
