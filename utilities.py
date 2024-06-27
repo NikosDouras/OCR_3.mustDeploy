@@ -5,7 +5,7 @@ from fpdf import FPDF
 
 endpoint = os.getenv('AZURE_ENDPOINT')
 subscription_key = os.getenv('AZURE_KEY')
-version = "vision/v3.1/ocr"
+version = "vision/v3.2/ocr"
 def optimize_image(input_path, output_path, max_size_mb=4, quality=95, min_dim=50, max_dim=4200):
     with Image.open(input_path) as img:
         width, height = img.size
