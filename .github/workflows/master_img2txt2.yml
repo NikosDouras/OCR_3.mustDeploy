@@ -7,7 +7,7 @@ name: Build and deploy Python app to Azure Web App - img2txt2
 on:
   push:
     branches:
-      - master  # or main if you use main branch
+      - master  
   workflow_dispatch:
 
 jobs:
